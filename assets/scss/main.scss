@@ -1,0 +1,217 @@
+@import "config";
+@import "animations";
+@import "responsive";
+
+.bg-img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: url(/assets/img/bg.jpg) no-repeat center fixed;
+  background-size: cover;
+  z-index: -1;
+  animation: shrink 13s infinite alternate steps(60);
+}
+
+.logo {
+  margin-top: 0.6rem;
+}
+
+.d-none {
+  display: none;
+}
+
+/*
+ === TEXT TAG ===
+*/
+
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 28px;
+  font-weight: weight(light);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1.6px;
+    background-color: $light-blue;
+    margin-top: 25px;
+  }
+}
+
+p {
+  margin: 1rem 0;
+  font-size: 16px;
+  font-weight: weight(regular);
+}
+
+/*
+ === CONTAINER, ROW, COL  ===
+*/
+
+
+.container {
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  position: relative;
+}
+
+.col-50 {
+  width: 50%;
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/*
+ === BUTTONS ===
+*/
+
+button {
+  border-radius: 50rem;
+  text-transform: uppercase;
+}
+
+/*
+ === AUTHORIZATION DIV ===
+*/
+
+.authorization {
+  .container {
+    display: flex;
+    @extend %flex-center-xy;
+  }
+
+  &__col-50 {
+    color: $primary-color;
+    padding: 3.7rem 4.5rem;
+  }
+
+  .row {
+    background-color: rgba(27, 35, 71, 0.8);
+  }
+
+  button {
+    font-size: 13px !important;
+    color: $primary-color;
+    background-color: transparent;
+    border: 2px solid $light-blue;
+    padding: 0.9rem 3rem;
+    cursor: pointer;
+    font-weight: weight(demibold);
+
+    &:hover {
+      background-color: #48abfe;
+    }
+  }
+}
+
+/*
+SIGN UP AND SIGN IN FORM DIV
+*/
+
+.form-div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.9s;
+  background-color: $primary-color !important;
+  @extend %flex-center-xy;
+
+  &__sign-up,
+  &__login {
+    width: 65%;
+    opacity: 1;
+    transition: opacity 0.6s;
+    position: absolute;
+  }
+
+  &__login {
+    opacity: 0;
+    .button-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .row {
+    background-color: $primary-color !important;
+
+    .col-50:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  /*
+ === FIELD GROUPS ===
+*/
+
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    .row {
+      margin-bottom: -0.7rem;
+    }
+
+    .col-50:last-child() {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    label {
+      color: #8495b7;
+
+      span {
+        color: red;
+      }
+    }
+  }
+
+  .form-control {
+    display: inline-block;
+    width: 100%;
+    font-weight: weight(regular);
+    border: 0 !important;
+    border-bottom: 1px solid #8495b7 !important;
+    font-size: 16px !important;
+  }
+
+  button {
+    background-color: #f89a36;
+    border: 0;
+
+    &:hover {
+      background-color: #f6c039;
+    }
+  }
+
+  a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #8495b7;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 1.6rem;
+  width: 100%;
+  z-index: -1;
+
+  p {
+    text-align: center;
+    text-transform: uppercase;
+    color: $grey;
+    font-weight: weight(demibold);
+  }
+}

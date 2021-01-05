@@ -1,0 +1,25 @@
+@include keyframes-animation(shrink) {
+  0% {
+    transform: scale(1.2);
+  }
+  10% {
+    transform: scale(1.175);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  90% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
